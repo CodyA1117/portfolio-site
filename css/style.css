@@ -1,16 +1,35 @@
+/* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #0f0f0f;
+    background: url('../images/background.png') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #0f0f0f; /* fallback if image doesn't load */
     color: #ffffff;
     margin: 0;
     padding: 0;
+    position: relative;
+    overflow-x: hidden;
   }
   
+  /* Optional overlay to darken background slightly for better text contrast */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* 40% dark overlay */
+    z-index: -1;
+  }
+  
+  /* Header and Footer */
   header, footer {
     text-align: center;
     padding: 2rem;
   }
   
+  /* Projects Container */
   .projects-container {
     display: flex;
     flex-wrap: wrap;
@@ -18,6 +37,7 @@ body {
     padding: 2rem;
   }
   
+  /* Project Cards */
   .project-card {
     background-color: #1a1a1a;
     border-radius: 10px;
@@ -46,6 +66,7 @@ body {
     font-size: 0.8rem;
   }
   
+  /* Buttons */
   .btn {
     display: inline-block;
     margin-top: 1rem;
@@ -64,8 +85,8 @@ body {
   }
   
   /* Navbar */
-.navbar {
-    background-color: #0f0f0f;
+  .navbar {
+    background: transparent; /* Changed to transparent for background to show */
     padding: 1rem 2rem;
     position: fixed;
     width: 100%;
@@ -107,14 +128,15 @@ body {
   
   /* Hero Section */
   .hero {
-    height: 100vh;
-    background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
+    height: 85vh; /* Adjusted slightly from 100vh to 85vh */
+    background: none; /* Removed gradient so you can see the real background image */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0 2rem;
+    padding: 2rem;
+    padding-top: 120px; /* Push text slightly lower so it's centered under pyramid */
   }
   
   .hero h1 {
@@ -128,17 +150,21 @@ body {
     margin: 1rem 0;
   }
   
-  /* About, Projects, Contact */
+  /* About, Projects, Contact Sections */
   section {
     padding: 5rem 2rem;
     text-align: center;
+    scroll-margin-top: 80px; /* To fix scroll offset with fixed nav */
   }
   
   .about, .projects, .contact {
-    background-color: #1a1a1a;
+    background-color: rgba(26, 26, 26, 0.95); /* Slightly transparent so background shows through */
     margin-top: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #00ffe0;
   }
   
+  /* Section Headings */
   h2 {
     color: #00ffe0;
     margin-bottom: 1rem;
@@ -182,5 +208,10 @@ body {
     padding: 2rem;
     background: #0f0f0f;
     font-size: 0.9rem;
+  }
+  
+  /* Smooth Scroll */
+  html {
+    scroll-behavior: smooth;
   }
   

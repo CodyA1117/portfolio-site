@@ -29,24 +29,26 @@ body {
     padding: 2rem;
   }
   
-  /* Projects Container */
   .projects-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 2rem; 
     padding: 2rem;
   }
   
-  /* Project Cards */
+  
   .project-card {
     background-color: #1a1a1a;
     border-radius: 10px;
     padding: 1.5rem;
     margin: 1rem;
-    width: 300px;
+    width: 300px; 
     text-align: center;
     box-shadow: 0 0 10px #00ffe0;
+    flex: 0 1 300px; 
   }
+  
   
   .project-card h2 {
     margin-bottom: 0.5rem;
